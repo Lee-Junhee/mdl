@@ -56,20 +56,20 @@ def run(filename):
             add_sphere(polygons, args[0], args[1], args[2],
                        args[3], step_3d)
             matrix_mult(stack[-1], polygons)
-            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'])
+            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'] or '.white')
         elif command['op'] == 'torus':
             polygons = []
             add_torus(polygons, args[0], args[1], args[2],
                       args[3], args[4], step_3d)
             matrix_mult(stack[-1], polygons)
-            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'])
+            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'] or '.white')
         elif command['op'] == 'box':
             polygons = []
             add_box(polygons,
                     args[0], args[1], args[2],
                     args[3], args[4], args[5])
             matrix_mult(stack[-1], polygons)
-            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'])
+            draw_polygons(polygons, screen, zbuffer, view, ambient, light, symbols, command['constants'] or '.white')
         elif command['op'] == 'circle':
             edges = []
             add_circle(edges,
