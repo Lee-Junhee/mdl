@@ -113,7 +113,7 @@ def run(filename):
             matrix_mult(stack[-1], t)
             stack[-1] = [x[:] for x in t]
         elif command['op'] == 'push':
-            systems.append([x[:] for x in stack[-1]])
+            stack.append([x[:] for x in stack[-1]])
         elif command['op'] == 'pop':
             stack.pop()
         elif command['op'] in ['display', 'save']:
